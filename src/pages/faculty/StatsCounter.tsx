@@ -10,7 +10,7 @@ import { Users, Award, BookOpen, GraduationCap } from 'lucide-react';
  */
 const StatsCounter: React.FC = React.memo(() => {
   const statsRef = useRef<HTMLDivElement>(null);
-  const isVisible = useIntersectionObserver(statsRef, { threshold: 0.3 });
+  const isVisible = useIntersectionObserver(statsRef as React.RefObject<HTMLElement>, { threshold: 0.3 });
 
   const totalFaculty = useCountAnimation(47, 2000, isVisible);
   const departments = useCountAnimation(8, 2000, isVisible);

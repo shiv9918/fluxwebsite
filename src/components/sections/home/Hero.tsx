@@ -1,5 +1,5 @@
 // src/components/sections/home/Hero.tsx
-import { motion } from "framer-motion";
+import { motion, Variants, Transition } from "framer-motion";
 import SectionCTA from "@/components/sectionCTA";
 import logo from "@/assets/images/flux-logo.png";
 
@@ -29,13 +29,18 @@ const textChild = {
   },
 };
 
-const logoEnter = {
+const logoEnter: Variants = {
   hidden: { opacity: 0, y: -40, scale: 0.92 },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { type: "spring", stiffness: 160, damping: 18, mass: 0.8 },
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+      mass: 1,
+    } as Transition,
   },
 };
 
